@@ -38,3 +38,16 @@ print len(datalist)
 
 print enron_data['COLWELL WESLEY']['from_this_person_to_poi']
 
+
+nan_payments = []
+for person in enron_data: 
+	if enron_data[person]['total_payments'] == 'NaN': 
+			nan_payments.append(person)
+print len(nan_payments)
+x = float(len(nan_payments))/len(enron_data)
+print 'Percentage of people who are NaN for total payments:', x*100
+
+pois_nan_payments = len(set(nan_payments) & set(pois))
+y = float(pois_nan_payments)/len(enron_data)
+print 'Percentage of people with NaN for total payments who are POIS:', y*100
+
