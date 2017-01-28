@@ -45,6 +45,7 @@ for person in enron_data:
 			nan_payments.append(person)
 print len(nan_payments)
 x = float(len(nan_payments))/len(enron_data)
+
 print 'Percentage of people who are NaN for total payments:', x*100
 
 pois_nan_payments = len(set(nan_payments) & set(pois))
